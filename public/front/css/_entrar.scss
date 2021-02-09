@@ -1,0 +1,108 @@
+.bg {
+    background-image: url("/front/images/bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.geral {
+    padding: 30px;
+}
+
+.inicio {
+    width: 264px;
+    img {
+        padding: 30px;
+        width: 100%;
+        max-width: 624px;
+        height: auto;
+    }
+}
+
+.segundo {
+    padding: 0 0.9em;
+}
+
+.btn {
+    width: 90%;
+    font-weight: 600;
+    font-size: 40px;
+}
+
+.btn-altered {
+    background-color: #0023c4 !important;
+    color: white !important;
+    font-weight: 600 !important;
+    font-size: 1.5em !important;
+}
+.form-control {
+    border: 1px solid #441587 !important;
+    max-width: 100%;
+}
+::-webkit-input-placeholder {
+    color: #441587 !important;
+}
+
+.esqueceu {
+    margin: 8px 0 0 0 !important;
+    padding: 0 16px;
+    a {
+        text-decoration: none;
+        color: #441587;
+        text-transform: uppercase !important;
+    }
+}
+.botoes {
+    .cadastre {
+        padding-top: 15px;
+        span {
+            font-weight: 600;
+            color: #441587;
+        }
+    }
+    .face {
+        width: 130px;
+        height: auto;
+        background: #051a79;
+        border: none;
+        border-radius: 10px !important;
+        color: white;
+        padding: 5px;
+    }
+    .fa-facebook-f:before {
+        content: "\f39e";
+        color: white;
+    }
+
+    .fa-google:before {
+        content: "\f1a0";
+        color: white;
+    }
+
+    .google {
+        width: 130px;
+        height: auto;
+        background: #f14436;
+        border: none;
+        border-radius: 10px !important;
+        color: white;
+        padding: 5px;
+    }
+
+    .conta {
+        padding-top: 15px;
+        span {
+            font-weight: 600;
+            color: #441587;
+        }
+    }
+    .entrar {
+        background: #441587;
+        border: none;
+        padding: 8px;
+        color: white;
+        max-width: 100%;
+        width: 118px;
+        border-radius: 5px;
+    }
+}

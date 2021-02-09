@@ -1,61 +1,79 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
 
-        <div class="card-body">
-
-            <x-jet-validation-errors class="mb-3 rounded-0" />
-
-            @if (session('status'))
-                <div class="alert alert-success mb-3 rounded-0" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
-
-            <form method="POST" action="{{ route('login') }}">
-                @csrf
-                <div class="form-group">
-                    <x-jet-label value="{{ __('Email') }}" />
-
-                    <x-jet-input class="{{ $errors->has('email') ? 'is-invalid' : '' }}" type="email"
-                                 name="email" :value="old('email')" required />
-                    <x-jet-input-error for="email"></x-jet-input-error>
-                </div>
-
-                <div class="form-group">
-                    <x-jet-label value="{{ __('Password') }}" />
-
-                    <x-jet-input class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" type="password"
-                                 name="password" required autocomplete="current-password" />
-                    <x-jet-input-error for="password"></x-jet-input-error>
-                </div>
-
-                <div class="form-group">
-                    <div class="form-check">
-                        <x-jet-checkbox id="remember_me" name="remember" />
-
-                        <label class="form-check-label" for="remember">
-                            {{ __('Remember Me') }}
-                        </label>
+    <div class="container-fluid">
+        <div class="row ">
+            <!-- logo -->
+            <div class="container">
+                <div class="inicio mx-auto">
+                    <div class="logo">
+                        <img src="{{ asset('front/images/logo1.jpg') }}">
                     </div>
                 </div>
+            </div>
+            <div class="container">
+                <div class="d-flex flex-column justify-content-center segundo">
+                    <form action="{{ route('login') }}" method="post">
+                        @csrf
+                        <!-- email -->
+                        <div class="mb-3">
+                            <div class="col-sm-10">
+                                <input type="text" name="email" class="form-control" placeholder="E-MAIL:">
+                                @if($errors->any)
+                                <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- senha -->
+                        <div class="mb-3 ">
+                            <div class="col-sm-10">
+                                <input type="password" name="password" class="form-control" placeholder="SENHA:">
+                                @if($errors->any)
+                                <span class="text-danger">{{ $errors->first('password') }}</span>
+                                @endif
+                            </div>
+                        </div>
+                        <!-- cadastrar -->
+                        <div class="text-center">
+                            <div>
+                                <button type="submit" class="btn btn-altered">ACESSAR</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="botoes">
+                        <div>
+                            <div class="esqueceu">
+                                <a href="#">Esqueceu a senha?</a>
+                            </div>
+                        </div>
+                        <!-- botoes -->
 
-                <div class="mb-0">
-                    <div class="d-flex justify-content-end align-items-baseline">
-                        @if (Route::has('password.request'))
-                            <a class="text-muted mr-3" href="{{ route('password.request') }}">
-                                {{ __('Forgot your password?') }}
-                            </a>
-                        @endif
-
-                        <x-jet-button>
-                            {{ __('Login') }}
-                        </x-jet-button>
+                        <div class="text-center">
+                            <div class="cadastre">
+                                <span>OU ENTRE COM</span>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-around mt-2 text-center">
+                            <button class="face"><i class="fab fa-facebook-f"></i> FACEBOOK</i></button>
+                            <button class="google"><i class="fab fa-google"></i> GOOGLE</i></button>
+                        </div>
+                        <div class="text-center">
+                            <div class="conta">
+                                <span>NÃO TEM CONTA?</span>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <a href="{{ url('/register') }}"> <button class="entrar">CADASTRAR</button></a>
+                        </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-    </x-jet-authentication-card>
+
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+        </script>
+    </div>
+
 </x-guest-layout>
